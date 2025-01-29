@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI/ML Portfolio - Krishna</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
          :root {
             --primary-bg: #f0f4f8;
@@ -31,6 +34,63 @@
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
         }
+        .typing-text {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    white-space: pre-wrap; /* Allows line breaks */
+    overflow: hidden;
+    margin-bottom: 1rem; /* Reduced bottom margin */
+}
+
+.typing-text {
+    font-size: 1rem; /* Adjusted size */
+    font-weight: 400;
+    color: #333;
+    white-space: pre-line; /* Allows line breaks */
+    overflow: hidden;
+    line-height: 1.2; /* Reduced line height for better readability */
+    margin-bottom: 2rem; /* Bottom margin for spacing */
+}
+
+.typing-text .line {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: black;
+    }
+}
+
+/* Optional: delay the animation for each line */
+.typing-text .line:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-text .line:nth-child(2) {
+    animation-delay: 1s; /* Start after the first line finishes */
+}
+
+.typing-text .line:nth-child(3) {
+    animation-delay: 3s; /* Start after the second line finishes */
+}
+
+
 
         h1, h2, h3 {
             line-height: 1.1;
@@ -47,6 +107,81 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        .bottom-buttons {
+        width: 100%;
+        padding: 1rem 1rem; /* Adjust padding */
+        background: #f0f4f8;
+        border-top: 1px solid #eaeaea;
+        margin-top: auto;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;  /* Adjust gap for a better look */
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;  /* Adjust gap between text and icons */
+        padding: 0.75rem 1.25rem;  /* Adjust button size */
+        border-radius: 25px;
+        font-size: 1rem; /* Standard font size */
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        border: 2px solid #5cb9f2;
+        background-color: transparent;
+    }
+
+    .social-btn i {
+        font-size: 1.2rem; /* Slightly larger icons */
+    }
+
+    /* Outline button style */
+    .outline-btn {
+        color: #5cb9f2;
+        border: 2px solid #5cb9f2;
+    }
+
+    .outline-btn:hover {
+        background-color: #5cb9f2;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(92, 185, 242, 0.2);
+    }
+
+    /* Solid button style */
+    .solid-btn {
+        background-color: #5cb9f2;
+        color: white;
+        border: 2px solid #5cb9f2;
+    }
+
+    .solid-btn:hover {
+        background-color: #4aa0d8;
+        border-color: #4aa0d8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(92, 185, 242, 0.2);
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+        .button-container {
+            gap: 1rem;
+        }
+
+        .social-btn {
+            padding: 0.6rem 1.1rem;  /* Slightly smaller buttons */
+            font-size: 0.9rem; /* Smaller text on mobile */
+        }
+    }
 
         .hero {
             min-height: 100vh;
@@ -119,28 +254,32 @@
         }
 
         .filters {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-        }
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
 
-        .filter-btn {
-            padding: 0.75rem 1.75rem;
-            border-radius: 50px;
-            background: transparent;
-            border: 1px solid rgba(92, 185, 242, 0.3);
-            color: var(--accent);
-            cursor: pointer;
-            transition: var(--transition);
-        }
+.filter-btn {
+    padding: 0.9rem 1.8rem;  /* Slightly reduced padding */
+    font-size: 1rem;  /* Reduced font size */
+    font-weight: 500;
+    border-radius: 50px;
+    background: transparent;
+    border: 1.5px solid rgba(92, 185, 242, 0.5); /* Slightly thinner border */
+    color: var(--accent);
+    cursor: pointer;
+    transition: var(--transition);
+}
 
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: rgba(92, 185, 242, 0.1);
-            border-color: var(--accent);
-        }
+.filter-btn.active,
+.filter-btn:hover {
+    background: rgba(92, 185, 242, 0.12); /* Adjusted hover effect */
+    border-color: var(--accent);
+    transform: scale(1.03); /* Subtle hover effect */
+}
+
 
         .modal-backdrop {
             position: fixed;
@@ -222,6 +361,90 @@
             max-height: 300px;
             object-fit: contain;
         }
+        /* General reset and base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8; /* Primary background color */
+    color: #333;
+}
+
+/* Button container and styles */
+.bottom-buttons {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background: #f0f4f8; /* Match background color */
+    border-top: 1px solid #eaeaea;
+    margin-top: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+.outline-btn {
+    background-color: transparent;
+    border: 2px solid #5cb9f2;
+    color: #5cb9f2;
+}
+
+.outline-btn:hover {
+    background-color: #5cb9f2;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(92, 185, 242, 0.2);
+}
+
+.solid-btn {
+    background-color: #5cb9f2;
+    border: 2px solid #5cb9f2;
+    color: white;
+}
+
+.solid-btn:hover {
+    background-color: #4aa0d8;
+    border-color: #4aa0d8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(92, 185, 242, 0.2);
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .button-container {
+        gap: 1rem;
+    }
+
+    .social-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
 
         .github-link {
     display: inline-block;
@@ -263,31 +486,41 @@
 <body>
     <section class="hero">
         <div>
-            <h1>Krishna</h1>
+            <h1>𝐊𝗋𝗂𝗌ɦ𐓣α</h1>
             <p style="color: var(--accent); font-size: clamp(1.25rem, 4vw, 1.5rem);">
-                AI/ML Engineer & Data Scientist
+              𝑨𝑰/𝑴𝑳 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓 & 𝑫𝒂𝒕𝒂 𝑺𝒄𝒊𝒆𝒏𝒕𝒊𝒔𝒕
             </p>
         </div>
     </section>
 
     <section class="about">
-        <h2>About Me</h2>
+        <h2>𝑨𝒃𝒐𝒖𝒕 𝑴𝒆</h2>
         <div class="about-content">
-            <img src="https://doodleipsum.com/700x525/hand-drawn?i=5161bb877ab9ee772e3df19e82e2334e" alt="Profile" class="profile-img">
+            <img src="https://doodleipsum.com/700x525/hand-drawn?i=e2ef7e24d8f1a7b6adba6a4fd45c3aa9" alt="Profile" class="profile-img">
             <div>
-                <p style="margin-bottom: 1.5rem;">
-                    Passionate AI developer with expertise in machine learning and deep learning. 
-                    Specialized in computer vision and natural language processing. Strong background 
-                    in transforming theoretical concepts into practical solutions.
-                </p>
+              <p class="typing-text">
+                <span class="line">AI innovator specializing in GenAI, intelligent agents,</span>
+                <span class="line">and computer vision—building smart, scalable,</span>
+                <span class="line">and impactful solutions.</span>
+            </p>
+            
+            
+
+            
+            
+            
+            
+
+
+
                 <div>
-                    <h3>Technical Skills</h3>
+                    <h3>𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐒𝐤𝐢𝐥𝐥𝐬</h3>
                     <ul style="display: grid; gap: 0.75rem; margin-top: 1rem;">
-                        <li>• Python, TensorFlow, PyTorch</li>
-                        <li>• Data Analysis & Visualization</li>
-                        <li>• Cloud Deployment (AWS, GCP)</li>
-                        <li>• Natural Language Processing</li>
-                        <li>• Computer Vision</li>
+                        <li> Python, TensorFlow, PyTorch</li>
+                        <li> Data Analysis & Visualization</li>
+                        <li> Cloud Deployment (AWS, GCP)</li>
+                        <li> Natural Language Processing</li>
+                        <li> Computer Vision</li>
                     </ul>
                 </div>
             </div>
@@ -295,7 +528,8 @@
     </section>
 
     <section class="projects">
-        <h2>Featured Projects</h2>
+        <h2>𝙵𝚎𝚊𝚝𝚞𝚛𝚎𝚍 𝙿𝚛𝚘𝚓𝚎𝚌𝚝𝚜
+        </h2>
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="ml">ML</button>
@@ -424,25 +658,50 @@ responses = agent.handle_message('How can I help you?')`,
         });
     }
 
-        function closeModal() {
-            document.getElementById('modalBackdrop').style.display = 'none';
-            document.getElementById('modalContent').style.display = 'none';
-        }
+    function closeModal() {
+    document.getElementById('modalBackdrop').style.display = 'none';
+    document.getElementById('modalContent').style.display = 'none';
+}
 
-        // Handle clicks outside modal
-        document.getElementById('modalBackdrop').addEventListener('click', closeModal);
+document.getElementById('modalBackdrop').addEventListener('click', closeModal);
 
-        // Initialize and handle project filters
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelector('.filter-btn.active').classList.remove('active');
-                btn.classList.add('active');
-                renderProjects(btn.dataset.filter);
-            });
-        });
+// Initial render of projects
+renderProjects();
+
+// Event listeners for filters
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProjects(btn.dataset.filter);
+    });
+});
+
 
         // Initial render
         renderProjects();
     </script>
+    <!-- Bottom buttons section -->
+<div class="bottom-buttons">
+  <div class="button-container">
+      <a href="mailto:bovillakrishna.ai@gmail.com" class="social-btn outline-btn">
+          <i class="fas fa-envelope"></i>
+          <span>Email Me</span>
+      </a>
+      <a href="resume.html" class="social-btn outline-btn">
+          <i class="fas fa-file-alt"></i>
+          <span>Resume</span>
+      </a>
+      <a href="www.linkedin.com/in/krishnaai" target="_blank" class="social-btn outline-btn">
+          <i class="fab fa-linkedin-in"></i>
+          <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/bkrishnaai" target="_blank" class="social-btn outline-btn">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+      </a>
+  </div>
+</div>
+
 </body>
 </html>
